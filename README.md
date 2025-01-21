@@ -34,4 +34,22 @@ local UI = Lib:Create{
         end
     end
  }
+
+ Divider:SearchDropdown{
+    Name = "Teleports",
+    Options = {"Pleasant Park", "Loot Lake", "Tomato Town", "Wailing Woods", "Anarchy Acres", "Retail Row"},
+    ClearText = false, -- default
+    Callback = function(Value)
+        print(Value)
+    end
+ }
  
+ local Quit = QuitDivider:Button{
+    Name = "Fechar Hub",
+    Callback = function()
+        UI:Quit{
+            Message = "Hub Off...", -- closing message
+            Length = 1 -- seconds the closing message shows for
+        }
+    end
+ }
